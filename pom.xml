@@ -184,12 +184,12 @@
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
-                <filtering>true</filtering>
+<!--                <filtering>true</filtering>-->
             </resource>
-            <resource>
-                <directory>src/test/resources</directory>
-                <filtering>true</filtering>
-            </resource>
+<!--            <resource>-->
+<!--                <directory>src/test/resources</directory>-->
+<!--&lt;!&ndash;                <filtering>true</filtering>&ndash;&gt;-->
+<!--            </resource>-->
         </resources>
         <pluginManagement>
             <plugins>
