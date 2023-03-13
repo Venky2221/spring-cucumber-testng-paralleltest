@@ -29,14 +29,14 @@ public class Hooks extends WikipediaAbstractTestDefinition {
         String filename = scenario.getName().replaceAll("\\s+", "_");
         logManager.createNewLogger(filename);
 
-        synchronized (lock) {
-            if (!initialized) {
-                if (!driverManager.isDriverExisting()) {
-                    driverManager.downloadDriver();
-                }
-                initialized = true;
-            }
-        }
+//        synchronized (lock) {
+//            if (!initialized) {
+//                if (!driverManager.isDriverExisting()) {
+//                    driverManager.downloadDriver();
+//                }
+//                initialized = true;
+//            }
+//        }
         driverManager.createDriver();
     }
 

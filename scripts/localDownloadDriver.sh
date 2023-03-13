@@ -1,12 +1,11 @@
 #!/bin/bash
 
 set -x
+export SCRIPT_DIR=../common/src/main/resources
+cd $SCRIPT_DIR
 
 ROOT_DIR=$(pwd)
-echo "$ROOT_DIR"
-cd "$ROOT_DIR"
-
-TEST_RESOURCES=common/src/main/resources
+TEST_RESOURCES=$ROOT_DIR
 FILE_EXTENSION=""
 
 case "$OSTYPE" in
