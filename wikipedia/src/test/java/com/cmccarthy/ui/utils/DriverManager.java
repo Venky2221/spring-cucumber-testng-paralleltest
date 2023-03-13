@@ -65,7 +65,10 @@ public class DriverManager {
             case ("chrome") -> {
                 System.setProperty("webdriver.chrome.driver", Constants.DRIVER_DIRECTORY + "/chromedriver" + getExtension());
                 ChromeOptions options = new ChromeOptions();
-                options.addArguments("--disable-logging");
+                options.addArguments("window-size=1920,1080");
+                options.addArguments("--headless");
+                options.addArguments("--no-sandbox");
+                options.addArguments("--remote-allow-origins=*");
                 driverThreadLocal.set(new ChromeDriver(options));
             }
             case ("firefox") -> {
