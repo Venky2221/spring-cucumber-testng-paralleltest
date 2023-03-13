@@ -148,10 +148,10 @@ public class DriverManager {
             Process process;
             if (getOperatingSystem().equals("win")) {
                 process = Runtime.getRuntime().exec("cmd.exe /c downloadDriver.sh", null,
-                        new File(Constants.COMMON_RESOURCES));
+                        new File(System.getProperty("user.dir") + "/../scripts/"));
             } else {
                 process = Runtime.getRuntime().exec(
-                        new String[]{"sh", "-c", Constants.COMMON_RESOURCES + "/downloadDriver.sh"});
+                        new String[]{"sh", "-c", System.getProperty("user.dir") + "/../scripts/downloadDriver.sh" });
             }
             process.waitFor();
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
