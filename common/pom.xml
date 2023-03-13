@@ -15,30 +15,50 @@
 
     <build>
         <plugins>
+<!--            <plugin>-->
+<!--                <artifactId>maven-remote-resources-plugin</artifactId>-->
+<!--                <version>${maven-remote-resources-plugin.version}</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <goals>-->
+<!--                            <goal>bundle</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--                <configuration>-->
+<!--                    <includes>-->
+<!--                        <include>**/*.properties</include>-->
+<!--                        <include>**/logback.xml</include>-->
+<!--                        <include>**/extent.xml</include>-->
+<!--                    </includes>-->
+<!--                </configuration>-->
+<!--                <dependencies>-->
+<!--                    <dependency>-->
+<!--                        <groupId>org.apache.maven.shared</groupId>-->
+<!--                        <artifactId>maven-filtering</artifactId>-->
+<!--                        <version>3.3.0</version>-->
+<!--                    </dependency>-->
+<!--                </dependencies>-->
+<!--            </plugin>-->
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-remote-resources-plugin</artifactId>
-                <version>${maven-remote-resources-plugin.version}</version>
+                <version>1.7.0</version>
+                <configuration>
+                    <resourceBundles>
+                        <resourceBundle>spring-cucumber-testng-parallel-test-harness:common:1.0-SNAPSHOT</resourceBundle>
+                    </resourceBundles>
+                    <attachToMain>false</attachToMain>
+                    <attachToTest>true</attachToTest>
+                    <appendedResourcesDirectory>${basedir}/src/test/resources</appendedResourcesDirectory>
+                </configuration>
                 <executions>
                     <execution>
                         <goals>
-                            <goal>bundle</goal>
+                            <goal>process</goal>
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
-                    <includes>
-                        <include>**/*.properties</include>
-                        <include>**/logback.xml</include>
-                        <include>**/extent.xml</include>
-                    </includes>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.apache.maven.shared</groupId>
-                        <artifactId>maven-filtering</artifactId>
-                        <version>3.3.0</version>
-                    </dependency>
-                </dependencies>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
