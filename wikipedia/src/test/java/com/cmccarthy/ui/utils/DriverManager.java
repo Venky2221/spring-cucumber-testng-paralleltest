@@ -66,7 +66,7 @@ public class DriverManager {
                 System.setProperty("webdriver.chrome.driver", Constants.DRIVER_DIRECTORY + "/chromedriver" + getExtension());
                 ChromeOptions options = new ChromeOptions();
                 options.addArguments("window-size=1920,1080");
-                options.addArguments("--headless");
+//                options.addArguments("--headless");
                 options.addArguments("--no-sandbox");
                 options.addArguments("--remote-allow-origins=*");
                 driverThreadLocal.set(new ChromeDriver(options));
